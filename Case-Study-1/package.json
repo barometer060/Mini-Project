@@ -1,0 +1,25 @@
+{
+  "name": "Case-Study-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "client-sessions": "^0.8.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "fawn": "^2.1.5",
+    "helmet": "^3.13.0",
+    "joi": "^13.6.0",
+    "joi-objectid": "^2.0.0",
+    "mongodb": "^3.1.4",
+    "mongoose": "^5.2.13",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.3"
+  }
+}
