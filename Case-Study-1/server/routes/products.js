@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Product, validate } = require("../models/product");
+const _ = require("lodash");
 
 router.get("/", async (req, res) => {
   const products = await Product.find().sort("_id");
@@ -19,7 +20,7 @@ router.post("/", async (req, res) => {
   });
   await product.save();
 
-  res.send(product);
+  res.send(_.pick(product, ["_id", "name", "description", "price"]));
 });
 
 router.put("/:id", async (req, res) => {
@@ -39,7 +40,7 @@ router.put("/:id", async (req, res) => {
   if (!product)
     return res.status(404).send("The product with the given ID was not found.");
 
-  res.send(product);
+  res.send(_.pick(product, ["_id", "name", "description", "price"]));
 });
 
 router.delete("/:id", async (req, res) => {
@@ -48,7 +49,7 @@ router.delete("/:id", async (req, res) => {
   if (!product)
     return res.status(404).send("The product with the given ID was not found.");
 
-  res.send(product);
+  res.send(_.pick(product, ["_id", "name", "description", "price"]));
 });
 
 module.exports = router;
