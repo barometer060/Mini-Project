@@ -28,7 +28,6 @@ export class ProductFormComponent implements OnChanges {
   constructor(private ser: ProductService, private fb: FormBuilder) {}
 
   ngOnChanges() {
-    console.log(this.product);
     this.editForm = this.fb.group({
       id: this.product._id,
       name: this.product.name,
