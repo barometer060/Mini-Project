@@ -28,8 +28,9 @@ export class ProductFormComponent implements OnChanges {
   constructor(private ser: ProductService, private fb: FormBuilder) {}
 
   ngOnChanges() {
+    console.log(this.product);
     this.editForm = this.fb.group({
-      id: { value: this.product._id, disabled: true },
+      id: this.product._id,
       name: this.product.name,
       description: this.product.description,
       price: this.product.price
@@ -43,6 +44,7 @@ export class ProductFormComponent implements OnChanges {
       description: this.editForm.value.description,
       price: parseInt(this.editForm.value.price)
     };
+    console.log(this.editForm.value);
     this.ser.updateData(id, data).subscribe(response => {
       this.onProduct.emit(response);
     });
