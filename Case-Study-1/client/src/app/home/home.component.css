@@ -1,3 +1,12 @@
 .table {
-	margin-top: 50px;
+  margin-top: 50px;
+}
+
+.table>tbody>tr>td {
+  vertical-align: middle;
+}
+
+.productForm {
+  margin-top: 40px;
+  width: 400px;
 }
