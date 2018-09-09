@@ -41,7 +41,7 @@ export class ProductFormComponent implements OnChanges {
       _id: parseInt(this.editForm.value.id),
       name: this.editForm.value.name,
       description: this.editForm.value.description,
-      price: parseInt(this.editForm.value.price)
+      price: parseFloat(this.editForm.value.price)
     };
     console.log(this.editForm.value);
     this.ser.updateData(id, data).subscribe(response => {

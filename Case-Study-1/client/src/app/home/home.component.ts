@@ -47,4 +47,10 @@ export class HomeComponent implements OnInit {
     this.editProduct = false;
     this.addProduct = true;
   }
+
+  handleAdd(response) {
+    this.products.push(response);
+    this.addProduct = false;
+    this.editProduct = false;
+  }
 }

@@ -22,4 +22,8 @@ export class ProductService {
   updateData(id: number, data: Object) {
     return this._http.put(this._url + id, data);
   }
+
+  addData(data: IProduct) {
+    return this._http.post(this._url, data);
+  }
 }
