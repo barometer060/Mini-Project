@@ -6,9 +6,10 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProductFormComponent } from './product-form/product-form.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, ProductFormComponent],
+	declarations: [AppComponent, HomeComponent, ProductFormComponent, AddProductComponent],
 	imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent]

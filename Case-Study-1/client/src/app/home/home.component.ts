@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
     this.addProduct = false;
     const index = this.products.findIndex(prod => prod._id === id);
     this.formProduct = this.products[index];
-    console.log(id);
   }
 
   handleUpdate(response) {

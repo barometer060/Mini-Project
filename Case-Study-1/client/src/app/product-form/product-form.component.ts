@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+} from "@angular/core";
 import { IProduct } from "../home/product";
 import { ProductService } from "../product.service";
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -8,7 +15,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   templateUrl: "./product-form.component.html",
   styleUrls: ["./product-form.component.css"]
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent implements OnChanges {
   @Input()
   product: IProduct;
 
@@ -20,9 +27,9 @@ export class ProductFormComponent implements OnInit {
 
   constructor(private ser: ProductService, private fb: FormBuilder) {}
 
-  ngOnInit() {
+  ngOnChanges() {
     this.editForm = this.fb.group({
-      id: this.product._id,
+      id: { value: this.product._id, disabled: true },
       name: this.product.name,
       description: this.product.description,
       price: this.product.price

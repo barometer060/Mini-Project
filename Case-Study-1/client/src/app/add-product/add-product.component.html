@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="form" [formGroup]="editForm">
+  <form class="form" [formGroup]="addForm">
     <div class="form-group">
       <label>ID</label>
       <input type="text" class="form-control" formControlName="id">
@@ -16,6 +16,6 @@
       <label>Price</label>
       <input type="text" class="form-control" formControlName="price">
     </div>
-    <button class="btn btn-warning" type="button" (click)="updateData(product._id)">Edit Details</button>
+    <button class="btn btn-warning" type="button" (click)="addData()">Add Details</button>
   </form>
 </div>
