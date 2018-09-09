@@ -5,13 +5,25 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ProductFormComponent } from './product-form/product-form.component';
-import { AddProductComponent } from './add-product/add-product.component';
+import { ProductFormComponent } from "./product-form/product-form.component";
+import { AddProductComponent } from "./add-product/add-product.component";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, ProductFormComponent, AddProductComponent],
-	imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-	providers: [],
-	bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProductFormComponent,
+    AddProductComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxPaginationModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

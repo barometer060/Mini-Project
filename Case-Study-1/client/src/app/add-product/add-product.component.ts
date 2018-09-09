@@ -29,10 +29,10 @@ export class AddProductComponent implements OnInit {
       _id: parseInt(this.addForm.value.id),
       name: this.addForm.value.name,
       description: this.addForm.value.description,
-      price: parseFloat(this.addForm.value.price);
-    }
+      price: parseFloat(this.addForm.value.price)
+    };
     this.ser.addData(data).subscribe(response => {
       this.onAdd.emit(response);
-    })
+    });
   }
 }
