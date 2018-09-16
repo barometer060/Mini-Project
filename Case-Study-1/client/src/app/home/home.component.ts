@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ProductService } from "../product.service";
 import { IProduct } from "./product";
 
+import { Router } from "@angular/router";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -9,10 +11,10 @@ import { IProduct } from "./product";
 })
 export class HomeComponent implements OnInit {
   products: IProduct[];
-  editProduct: boolean = false;
-  addProduct: boolean = false;
+  editProduct = false;
+  addProduct = false;
   formProduct: IProduct;
-  constructor(private ser: ProductService) {}
+  constructor(private ser: ProductService, private router: Router) {}
 
   ngOnInit() {
     this.ser.getData().subscribe(data => {
@@ -45,7 +47,7 @@ export class HomeComponent implements OnInit {
 
   addToProducts() {
     this.editProduct = false;
-    this.addProduct = true;
+    this.router.navigateByUrl("/add");
   }
 
   handleAdd(response) {

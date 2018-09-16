@@ -21,7 +21,8 @@
       </tr>
     </tbody>
   </table>
-  <div class="jumbotron">
+  <div class="jumbotron text-center">
+    <p>To add products to the list click <b>Add</b> button</p>
     <button class="btn btn-success" type="button" (click)="addToProducts()">Add Product</button>
   </div>
 </div>
@@ -32,15 +33,6 @@
   </div>
   <div class="card-body">
     <app-product-form [product]="formProduct" (onProduct)="handleUpdate($event)"></app-product-form>
-  </div>
-</div>
-
-<div class="productForm card mx-auto" *ngIf="addProduct">
-  <div class="card-header text-center">
-    <h3>Add Product</h3>
-  </div>
-  <div class="card-body">
-    <app-add-product (onAdd)="handleAdd($event)"></app-add-product>
   </div>
 </div>
 

@@ -9,6 +9,8 @@ import { ProductFormComponent } from "./product-form/product-form.component";
 import { AddProductComponent } from "./add-product/add-product.component";
 import { NgxPaginationModule } from "ngx-pagination";
 
+import { AppRoutingModule } from "./app-routing.module";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { NgxPaginationModule } from "ngx-pagination";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

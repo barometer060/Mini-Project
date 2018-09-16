@@ -1,7 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { IProduct } from "../home/product";
 import { ProductService } from "../product.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-add-product",
@@ -9,11 +11,10 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
   styleUrls: ["./add-product.component.css"]
 })
 export class AddProductComponent implements OnInit {
-  @Output()
-  onAdd = new EventEmitter();
 
   addForm: FormGroup;
-  constructor(private ser: ProductService, private fb: FormBuilder) {}
+  submitted = false;
+  constructor(private ser: ProductService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.addForm = this.fb.group({
@@ -24,7 +25,13 @@ export class AddProductComponent implements OnInit {
     });
   }
 
+  get f() { return this.addForm.controls; }
+
   addData() {
+    this.submitted = true;
+
+    if(this.addForm.invalid) return;
+
     const data = {
       _id: parseInt(this.addForm.value.id),
       name: this.addForm.value.name,
@@ -32,7 +39,7 @@ export class AddProductComponent implements OnInit {
       price: parseFloat(this.addForm.value.price)
     };
     this.ser.addData(data).subscribe(response => {
-      this.onAdd.emit(response);
+      this.router.navigateByUrl("/home");
     });
   }
 }
